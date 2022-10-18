@@ -1,0 +1,35 @@
+<?php
+
+namespace Database\Factories\Domains\Rentals;
+
+use App\Domains\Car\Car;
+use App\Domains\Rentals\Enums\RentalsStatusEnum;
+use App\Models\User;
+use Illuminate\Database\Eloquent\Factories\Factory;
+
+/**
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Domains\Rentals>
+ */
+class RentalsFactory extends Factory
+{
+
+    /**
+     * Define the model's default state.
+     *
+     * @return array<string, mixed>
+     */
+    public function definition()
+    {
+        return [
+          'car_id' => Car::factory(),
+          'user_id' => User::factory(),
+          'comment' => $this->faker->sentence,
+          'status' => $this->faker->randomElement(
+            RentalsStatusEnum::getStates()
+          ),
+          'rent_start' => \Carbon\Carbon::now(),
+          'rent_end' => \Carbon\Carbon::now()->addDays(rand(1, 5)),
+        ];
+    }
+
+}
