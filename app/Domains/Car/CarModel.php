@@ -11,6 +11,7 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class CarModel extends Model
 {
+
     use HasFactory;
 
     protected $guarded = [];

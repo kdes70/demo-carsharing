@@ -2,6 +2,7 @@
 
 namespace Database\Factories\Domains\Car;
 
+use App\Domains\Car\Make;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -9,6 +10,8 @@ use Illuminate\Database\Eloquent\Factories\Factory;
  */
 class MakeFactory extends Factory
 {
+
+    protected $model = Make::class;
 
     /**
      * Define the model's default state.

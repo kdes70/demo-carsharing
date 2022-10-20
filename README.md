@@ -31,3 +31,11 @@ docker run --rm \
 
 ./vendor/bin/sail test
 ```
+
+### Заглушки
+
+Чтобы создать быстрый crud с тестами и документацией по API с настроенными заглушками:
+
+```bash
+php artisan make:model -c -f -m --api -R --test {model-name}
+```

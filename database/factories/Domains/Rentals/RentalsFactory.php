@@ -4,15 +4,17 @@ namespace Database\Factories\Domains\Rentals;
 
 use App\Domains\Car\Car;
 use App\Domains\Rentals\Enums\RentalsStatusEnum;
-use App\Models\User;
+use App\Domains\Rentals\Rental;
+use App\Domains\User\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Domains\Rentals>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Domains\Rentals\Rental>
  */
 class RentalsFactory extends Factory
 {
 
+    protected $model = Rental::class;
     /**
      * Define the model's default state.
      *

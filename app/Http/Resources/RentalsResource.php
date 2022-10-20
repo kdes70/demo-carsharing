@@ -2,7 +2,7 @@
 
 namespace App\Http\Resources;
 
-use App\Domains\Rentals;
+use App\Domains\Rentals\Rental;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class RentalsResource extends JsonResource
@@ -12,7 +12,7 @@ class RentalsResource extends JsonResource
     {
         $model = $this->resource;
 
-        if (empty($model) || !($model instanceof Rentals)) {
+        if (empty($model) || !($model instanceof Rental)) {
             return null;
         }
 
@@ -29,6 +29,10 @@ class RentalsResource extends JsonResource
 
         if ($model->relationLoaded('car')) {
             $data['car'] = new CarResource($model->car);
+        }
+
+        if ($model->relationLoaded('user')) {
+            $data['user'] = new UserResource($model->user);
         }
 
         return $data;

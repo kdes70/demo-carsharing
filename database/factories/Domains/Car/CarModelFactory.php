@@ -3,6 +3,7 @@
 namespace Database\Factories\Domains\Car;
 
 use App\Domains\Car\CarModel;
+use App\Domains\Car\Make;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -21,7 +22,7 @@ class CarModelFactory extends Factory
     public function definition(): array
     {
         return [
-            'make_id' => CarModel::factory(),
+            'make_id' => Make::factory(),
             'name' => $this->faker->word,
             'code' => strtoupper($this->faker->bothify('???-###')),
         ];
